@@ -1,0 +1,1687 @@
+/* ======================== FONTS & GENERAL STYLES ======================== */
+@font-face {
+    font-family: 'IranBakh';
+    /* ! مسیر فونت های خود را چک کنید */
+    src: url('fonts/iranbakh/YekanBakhFaNum-Regular.woff2') format('woff2'),
+    url('fonts/iranbakh/YekanBakhFaNum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Improves perceived performance */
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 10px; scroll-behavior: smooth; }
+
+body {
+    font-family: 'IranBakh', sans-serif;
+    direction: rtl;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.4rem; /* 14px */
+    overflow-x: hidden;
+    /* Padding for fixed elements will be added in mobile media query */
+}
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 15px; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+button { font-family: inherit; border: none; background: none; cursor: pointer; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; padding: 8px 20px; border-radius: 20px; font-size: 1.3rem; /* 13px */ text-align: center; transition: all 0.3s ease; cursor: pointer; font-weight: 700; }
+.btn-primary { background-color: rgba(255, 255, 255, 0.8); color: #333; border: 1px solid rgba(255, 255, 255, 0.8); }
+.btn-primary:hover { background-color: rgba(255, 255, 255, 1); }
+.btn-outline { background-color: transparent; color: #555; border: 1px solid #ccc; }
+.btn-outline:hover { background-color: #eee; }
+.btn-view-all { background-color: #e40206; color: #fff; border: none; padding: 8px 25px; border-radius: 20px; font-size: 1.4rem; font-weight: 500; margin-left: 15px; transition: background-color 0.3s ease; }
+.btn-view-all:hover { background-color: #c40003; }
+.btn-widget { background-color: #fff; color: #555; border: 1px solid #ddd; border-radius: 20px; padding: 7px 20px; font-size: 1.3rem; transition: all 0.3s ease; display: inline-block; }
+.btn-widget:hover { background-color: #f8f8f8; border-color: #ccc; color: #e40206; }
+.btn-more { background-color: #e40206; color: #fff; border: none; border-radius: 20px; padding: 8px 20px 8px 15px; font-size: 1.4rem; display: inline-flex; align-items: center; transition: background-color 0.3s ease; }
+.btn-more span { margin-left: 10px; }
+.btn-more i { font-size: 1.1em; transition: transform 0.3s ease; }
+.btn-more:hover { background-color: #c40003; }
+.btn-more:hover i { transform: translateX(-4px); }
+
+
+/* ======================== HEADER STYLES (Desktop) ======================== */
+.site-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative; /* Will change to non-fixed if needed */
+    z-index: 100;
+    padding: 24px 0 0 0;
+    /* display: block; Default */
+}
+.header-top { padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
+.header-top-container { display: flex; justify-content: space-between; align-items: center; }
+.header-top-right .logo img {
+    height: 53px;
+    width: 160px;
+}
+.header-top-left { display: flex; align-items: center; }
+.search-container { margin-left: 20px; position: relative; }
+.search-container input[type="search"] { background-color: #f1f2f4; border: none; border-radius: 20px; padding: 8px 40px 8px 15px; width: 250px; font-size: 1.5rem; font-family: inherit; }
+.search-container input[type="search"]::placeholder { color: #aaa; }
+.search-container button[type="submit"] { position: absolute; left: 0; top: 0; bottom: 0; width: 40px; background-color: #5d6aef; color: #fff; border-radius: 20px 0 0 20px; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; }
+.search-container button[type="submit"]:hover { background-color: #4a56d8; }
+.header-actions { display: flex; align-items: center; }
+.action-btn { display: flex; align-items: center; padding: 8px 12px; border-radius: 20px; margin-left: 10px; font-size: 1.4rem; transition: background-color 0.3s ease; }
+.action-btn i { font-size: 1.8rem; color: #555; }
+.wishlist-btn { background-color: #fff1f3; padding: 8px; border-radius: 50%; width: 36px; height: 36px; justify-content: center; margin-left: 5px; /* Adjusted margin */ }
+.wishlist-btn i { color: #f85d7a; font-size: 1.6rem; display: block; margin: 0; }
+.wishlist-btn:hover { background-color: #ffe5e9; }
+.login-btn { border: 1px solid #eee; background-color: #fff; }
+.login-btn i { margin-left: 8px; }
+.login-btn span { font-size: 1.3rem; color: #555; }
+.login-btn:hover { background-color: #f8f8f8; }
+.header-bottom { padding: 24px 0; position: relative; }
+.header-bottom-container { display: flex; justify-content: flex-start; align-items: center; position: relative; }
+.main-nav ul { display: flex; }
+.main-nav li { margin-left: 25px; }
+.main-nav a { font-size: 1.5rem; color: #555; transition: color 0.3s ease; position: relative; padding-bottom: 5px; }
+.main-nav a:hover { color: #000; }
+.nav-arrow { font-size: 0.8em; margin-right: 5px; color: #aaa; position: relative; top: -1px; }
+.cart-btn { position: absolute; top: -106%;; left: 30px; margin-top: 10px; background-color: #4caf50; color: #fff; width: 50px; height: 50px; border-radius: 15px 15px 15px 5px; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4); z-index: 10; }
+.cart-btn i { position: relative; top: 2px; }
+.cart-count { position: absolute; top: -5px; right: -5px; background-color: #ff5252; color: #fff; font-size: 1rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; }
+
+
+/* ======================== MAIN CONTENT AREA ======================== */
+.main-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+/* General Section Styles */
+.section-title-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.section-title { font-size: 2.2rem; font-weight: 700; color: #333; position: relative; padding-bottom: 8px; display: inline-block; }
+.section-title::after { content: ''; position: absolute; right: 0; bottom: 0; width: 40px; height: 3px; background-color: #e40206; }
+.section-title.alt-title { font-size: 1.7rem; font-weight: 700; }
+.section-title.alt-title::after { background-color: #ffc107; }
+.section-title .highlight { background-color: #ffc107; color: #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px; }
+.section-read-more { font-size: 1.4rem; color: #555; font-weight: 500; transition: color 0.3s ease; }
+.section-read-more:hover { color: #e40206; }
+
+/* Section Margins */
+.hero-section, .promo-section, .product-slider-section, .dual-banner-section,
+.product-grid-section, .wide-banner-section, .category-tabs-section,
+.category-product-slider, .category-icons-section, .digikala-showcase-section,
+.latest-articles-section, .features-section {
+    margin-bottom: 50px;
+}
+
+/* ======================== HERO SECTION STYLES ======================== */
+.hero-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.hero-main, .hero-side {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*! CSS IMAGE: پس زمینه اصلی هیرو (با گرادینت) */
+.hero-main {
+    background-image: url('/images/baner-1.jpg'); /* <<< مسیر تصویر اصلی هیرو */
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+/*! CSS IMAGE: پس زمینه کناری هیرو (با گرادینت) */
+.hero-side {
+    background-image: url('/images/banner-2.png'); /* <<< مسیر تصویر کناری هیرو */
+    padding: 40px 20px;
+    text-align: center;
+    color: #333; /* Text color for side banner */
+}
+/* Styling for potential image inside hero-side content */
+.hero-side .hero-content img {
+    max-width: 80%;
+    margin: 0 auto 15px auto; /* Center image if used */
+    display: block;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-main .hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.hero-main .hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #eee;
+}
+
+.hero-side .hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #333; /* Ensure readability */
+}
+
+.hero-side .hero-content p {
+    font-size: 1.6rem;
+    color: #555; /* Ensure readability */
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.slider-arrow {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.slider-arrow:hover { opacity: 1; }
+
+.slider-dots { display: flex; margin: 0 15px; }
+.dot { width: 8px; height: 8px; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%; margin: 0 4px; cursor: pointer; transition: background-color 0.3s ease; }
+.dot.active { background-color: #fff; }
+
+
+/* ======================== PROMO SECTION STYLES ======================== */
+.promo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr; /* small, small, wide */
+    gap: 20px;
+}
+
+.promo-item {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 250px;
+}
+
+/*! CSS IMAGE: پس زمینه پروموشن عریض (با گرادینت) */
+.promo-wide {
+    background-image:  url('./images/banner-04.png'); /* <<< مسیر تصویر پروموشن عریض */
+    background-color: #ffdce6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    padding: 30px;
+    grid-column: 3 / 4; /* Position it last */
+    grid-row: 1 / 2;
+}
+
+.promo-wide .promo-content { position: relative; z-index: 2; }
+.promo-wide h2 { font-size: 2.6rem; font-weight: 700; margin-bottom: 8px; }
+.promo-wide p { font-size: 1.5rem; color: #666; margin-bottom: 20px; }
+.dots-pattern { width: 80px; height: 40px; margin: 0 auto; background-image: radial-gradient(#bbb 2px, transparent 2px), radial-gradient(#bbb 2px, transparent 2px); background-size: 10px 10px; background-position: 0 0, 5px 5px; opacity: 0.5; }
+
+.promo-small { background-color: #e0eaff; /* Fallback color */ }
+
+/*! CSS IMAGE: پس زمینه پروموشن کوچک 1 */
+.promo-1 {
+    background-image: url('./images/banner-02.png'); /* <<< مسیر تصویر پروموشن کوچک 1 */
+    grid-column: 1 / 2; grid-row: 1 / 2;
+}
+/*! CSS IMAGE: پس زمینه پروموشن کوچک 2 */
+.promo-2 {
+    background-image: url('./images/banner-03.png'); /* <<< مسیر تصویر پروموشن کوچک 2 */
+    grid-column: 2 / 3; grid-row: 1 / 2;
+}
+
+
+/* ======================== PRODUCT CARD BASE STYLES ======================== */
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+    0 2px 2px rgba(0, 0, 0, 0.1);
+
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+.product-card:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); }
+
+.product-image-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+.product-image-wrapper img {
+    max-width: 90%;
+    height: 180px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.discount-badge { position: absolute; top: 10px; left: 10px; padding: 3px 8px; border-radius: 5px; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4; z-index: 2; }
+.discount-badge.badge-red { background-color: #e40206; }
+.discount-badge.badge-yellow { background-color: #ffab00; color: #333; font-size: 1.2rem; padding: 4px 10px; border-radius: 8px; }
+.discount-badge i.fa-tag { margin-right: 3px; font-size: 0.9em; }
+
+.product-info { margin-top: auto; }
+.product-info h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    height: 4.5em; /* Approx 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Consider using display: -webkit-box for multi-line ellipsis if needed and test cross-browser */
+    /* display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; */
+}
+.price-container {
+    margin-bottom: 10px;
+    min-height: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.original-price {
+    font-size: 1.3rem;
+    color: #aaa;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 3px;
+    height: 1.5em; /* Reserve space */
+}
+.current-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e40206;
+}
+.current-price .currency {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 3px;
+    color: #777777FF;
+}
+.color-variants { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 5px; z-index: 2; }
+.color-dot { display: block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.1); cursor: pointer; }
+.product-actions { display: flex; justify-content: center; gap: 10px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
+.action-icon { background: none; border: 1px solid #eee; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #777; font-size: 1.4rem; transition: all 0.3s ease; }
+.action-icon:hover { background-color: #f8f8f8; color: #e40206; border-color: #ddd; }
+
+
+/* ======================== STYLES FOR AMAZING OFFERS SLIDER HEADER ======================== */
+.section-header.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* فاصله بین هدر و اسلایدر */
+}
+
+.slider-header .section-title-container {
+    display: flex;
+    align-items: baseline; /* تراز کردن عنوان و متن زیرش */
+    gap: 10px; /* فاصله بین عنوان، نقطه چین و زیرعنوان */
+}
+
+.slider-header .section-title {
+    margin-bottom: 0; /* حذف مارجین پایین عنوان اصلی */
+    padding-bottom: 0; /* حذف پدینگ پایین */
+}
+.slider-header .section-title::after {
+    display: none; /* حذف خط زیر عنوان در این هدر خاص */
+}
+
+.section-title .highlight-red {
+    color: #e40206;
+    font-weight: bold;
+    font-size: 29px;
+}
+
+.dots-pattern-header {
+    width: 10px; /* عرض نقطه چین */
+    height: 20px; /* ارتفاع نقطه چین */
+    background-image:
+            radial-gradient(circle, #e40206 1.5px, transparent 1.5px), /* نقطه بالا */
+            radial-gradient(circle, #e40206 1.5px, transparent 1.5px), /* نقطه وسط */
+            radial-gradient(circle, #e40206 1.5px, transparent 1.5px); /* نقطه پایین */
+    background-size: 4px 4px; /* اندازه هر نقطه */
+    background-repeat: space no-repeat; /* تکرار در محور عمودی با فاصله */
+    background-position: center;
+    opacity: 0.8;
+    margin: 0 5px; /* کمی فاصله از عنوان و زیرعنوان */
+}
+
+.section-subtitle {
+    font-size: 1.4rem; /* اندازه زیرعنوان */
+    color: #666;
+    margin: 0;
+}
+
+.slider-header .section-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* فاصله بین دکمه مشاهده همه و فلش ها */
+}
+
+.slider-header .btn-outline {
+    border-radius: 20px; /* گردی مطابق تصویر */
+    padding: 6px 20px;
+    font-size: 1.3rem;
+}
+
+/* استایل فلش‌های ناوبری هدر اسلایدر */
+.slider-nav-arrow {
+    border: 1px solid #eee;
+    background-color: #fff; /* پس زمینه سفید */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #aaa; /* رنگ آیکن */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem; /* اندازه آیکن */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.slider-nav-arrow:hover {
+    background-color: #f5f5f5;
+    color: #555;
+    border-color: #ddd;
+}
+/* Adjust arrow direction for RTL if needed (Font Awesome handles it well usually) */
+/* .slider-nav-arrow.prev i { transform: scaleX(-1); } */
+/* .slider-nav-arrow.next i { transform: scaleX(-1); } */
+
+/* استایل نشانگر "بیشتر" زیر اسلایدر */
+.load-more-indicator {
+    text-align: center;
+    margin-top: 0; /* چسبیده به زیر اسلایدر */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 5;
+}
+.load-more-indicator i {
+    background-color: #f0f2f5; /* کمی متفاوت از بک گراند */
+    color: #adb5bd;
+    width: 40px;
+    height: 25px;
+    border-radius: 0 0 15px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* کمی سایه */
+    transition: background-color 0.3s ease;
+}
+.load-more-indicator i:hover {
+    background-color: #e4e6eb;
+}
+
+/* ======================== TOP PRODUCT SLIDER STYLES ======================== */
+.product-slider-section:not(.category-product-slider) {
+    padding-top: 20px;
+}
+
+/* ======================== DUAL BANNER SECTION STYLES ======================== */
+.dual-banner-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.banner-item {
+    min-height: 200px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+/*! CSS IMAGE: پس زمینه بنر ساعت (دوتایی) */
+.banner-watch {
+    background-image: url("./images/b1.png");/* <<< مسیر تصویر بنر ساعت */
+    background-position: top;
+    background-color: #FFF0E5;
+}
+/*! CSS IMAGE: پس زمینه بنر گوشی (دوتایی) */
+.banner-phone {
+    background-image: url("./images/b2.png"); /* <<< مسیر تصویر بنر گوشی */
+    background-color: #E5E5FF;
+}
+
+
+/* ======================== PRODUCT GRID SECTION STYLES (If Applicable) ======================== */
+/* Your original grid styles if you had a separate grid section */
+/* .product-grid-section { ... } */
+/* .product-grid { ... } */
+
+
+/* ======================== WIDE BOTTOM BANNER STYLES ======================== */
+.wide-banner-section {
+    background-color: #fff0e6; /* Color kept */
+    border-radius: 15px;
+    padding: 247px 0 0; /* Adjust padding if needed */
+    background-repeat: no-repeat;
+    display: flex; /* May need adjustment on mobile */
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('./images/banner-07.png');
+    background-size: cover; /* Ensure it covers */
+    background-position: center; /* Center the image */
+}
+.banner-content { flex-basis: 50%; } /* Adjust basis if needed */
+/* Other banner content styles... */
+
+
+/* ======================== CATEGORY TABS STYLES ======================== */
+.category-tabs-section {
+    display: flex;
+    justify-content: right; /* Keep right aligned on desktop */
+    margin-bottom: 25px; /* Add some space below tabs */
+}
+.category-tabs {
+    display: inline-flex;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.tab-btn { padding: 8px 25px; border-radius: 20px; font-size: 1.5rem; font-weight: 500; color: #555; transition: all 0.3s ease; }
+.tab-btn.active { background-color: #e40206; color: #fff; font-weight: 700; }
+.tab-btn:not(.active):hover { background-color: #f1f1f1; }
+
+
+/* ======================== CATEGORY PRODUCT SLIDER STYLES ======================== */
+.category-product-slider {
+    position: relative;
+}
+/* Adjust padding/margin for Swiper container to allow arrows to be outside */
+.category-product-slider .product-slider-container-B {
+    padding: 5px 40px;
+    margin: -5px -40px;
+    overflow: hidden; /* Add overflow hidden */
+}
+.simple-card .price-container { margin-bottom: 0; }
+.simple-card .price-container.single-price .current-price { font-size: 1.5rem; color: #E40206FF; }
+.simple-card .price-container.single-price .currency { color: #5b5b5b; font-size: 1.1rem; }
+.simple-card .product-info h3 { height: auto; min-height: 4.5em; }
+
+/* Arrows for category slider */
+.slider-nav-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Position relative to the .category-product-slider container */
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px; /* Adjust padding to position arrows */
+    pointer-events: none; /* Container doesn't block clicks */
+    z-index: 10;
+}
+.slider-arrow-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: #555;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    pointer-events: all; /* Arrows are clickable */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.slider-arrow-btn:hover { background-color: #fff; color: #e40206; }
+.slider-arrow-btn.swiper-button-disabled { opacity: 0.4; cursor: not-allowed; background-color: rgba(230, 230, 230, 0.7); }
+/* .slider-arrow-btn.prev i { transform: scaleX(-1); } */ /* If needed for RTL */
+/* .slider-arrow-btn.next i { transform: scaleX(-1); } */
+
+
+/* ======================== CATEGORY ICONS STYLES ======================== */
+.category-icons-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff; /* Color kept */
+    border-radius: 15px;
+    padding: 20px 10px; /* Add padding */
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Optional subtle shadow */
+}
+.category-icon-item { text-align: center; color: #1f1f1f; cursor: pointer; transition: color 0.3s ease; flex: 1; padding: 10px; max-width: 120px; min-width: 100px; }
+.category-icon-item:hover { color: #e40206; }
+.icon-wrapper { background-color: #f8f9fa; border: 1px solid #eee; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; transition: background-color 0.3s ease, border-color 0.3s ease; }
+.category-icon-item:hover .icon-wrapper { background-color: #fff0f0; border-color: #ffdfe2; }
+.icon-wrapper i { font-size: 2.4rem; color: #777; transition: color 0.3s ease; }
+.category-icon-item:hover .icon-wrapper i { color: #e40206; }
+.category-icon-item span { font-size: 1.3rem; font-weight: 500; }
+
+
+/* ======================== DIGIKALA SHOWCASE SECTION STYLES (REVISED) ======================== */
+.digikala-showcase-section {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.showcase-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 40px 15px; /* Add padding to the container */
+}
+
+.showcase-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase-image {
+    flex-basis: 45%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.showcase-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Faint Background Text - Optional */
+.showcase-image::before {
+    content: 'Shop digikala';
+    position: absolute;
+    top: 10%;
+    left: -5%;
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-weight: 800;
+    color: #f0f2f5;
+    opacity: 0.7;
+    z-index: 0;
+    white-space: nowrap;
+    user-select: none;
+    transform: rotate(-7deg);
+    pointer-events: none;
+    display: none; /* Hide by default, show on larger screens if desired */
+}
+@media (min-width: 992px) {
+    .showcase-image::before { display: block; }
+}
+
+
+.showcase-top {
+    margin-bottom: 25px;
+    text-align: left;
+}
+.showcase-top .social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    color: #b0b0b0;
+    font-size: 1.6rem;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+.showcase-top .social-icons a:hover {
+    background-color: #f8f8f8;
+    border-color: #ddd;
+    color: #555;
+}
+
+.showcase-main {
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+.showcase-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e40206;
+    margin-bottom: 8px;
+}
+.showcase-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+    display: inline-block;
+}
+.showcase-title::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: #212529;
+    border-radius: 2px;
+}
+.showcase-description {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.showcase-bottom {
+    display: flex; /* Changed from inline */
+    justify-content: space-between; /* Space items */
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.showcase-bottom .working-hours {
+    /* display: inline; */ /* Removed inline */
+    background-color: #fff0e6;
+    color: #dd5a00;
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: flex; /* Use flex for icon alignment */
+    align-items: center;
+}
+.showcase-bottom .working-hours i {
+    margin-left: 8px; /* RTL */
+    font-size: 1.4em;
+    color: #dd5a00;
+    position: relative;
+    top: 1px;
+}
+
+/* Button "بیشتر" - Inherits .btn.btn-more styles */
+
+
+/* Dots Pattern */
+.dots-pattern-showcase {
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#d5d5d5 1.5px, transparent 1.5px),
+    radial-gradient(#d5d5d5 1.5px, transparent 1.5px);
+    background-size: 14px 14px;
+    background-position: 0 0, 7px 7px;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+    display: none; /* Hide by default, show on larger screens if desired */
+}
+@media (min-width: 992px) {
+    .dots-pattern-showcase { display: block; }
+}
+
+
+/* ======================== LATEST ARTICLES SECTION STYLES (REVISED) ======================== */
+.latest-articles-section {
+    background-color: #fff; /* Color kept */
+    border-radius: 15px;
+    padding: 40px 0; /* Add padding to section */
+}
+/* Container needed if not already present */
+/* .latest-articles-section .container { ... } */
+
+/* --- Header Centering --- */
+.latest-articles-section .section-title-container {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.latest-articles-section .section-title.alt-title {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    position: relative;
+}
+.latest-articles-section .section-title .highlight {
+    background-color: #fffbeb;
+    color: #333;
+    font-size: 26px;
+    border-radius: 5px;
+    padding: 2px 8px; /* Adjust padding */
+}
+
+/* Title Underline */
+.latest-articles-section .section-title.alt-title::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center */
+    transform: translateX(-50%);
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background-color: #555; /* Dark gray color */
+    border-radius: 1.5px;
+    right: auto; /* Override default */
+}
+
+/* Read More Link Centering */
+.latest-articles-section .section-read-more {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.latest-articles-section .section-read-more:hover {
+    color: #e40206;
+}
+
+.articles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.article-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07); /* Add subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.article-image-link { display: block; }
+
+.article-image {
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 15px; */ /* Removed radius from image container */
+}
+.article-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    border-radius: 15px 15px 0 0; /* Round top corners only */
+}
+.article-card:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-tags {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    z-index: 2;
+}
+
+.article-tags .tag {
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.article-tags .tag-category {
+    background-color: #fff;
+    color: #333;
+}
+
+.article-tags .tag-date {
+    background-color: #e40206;
+    color: #fff;
+}
+
+.article-content {
+    padding: 20px 25px 25px 25px;
+}
+
+.article-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+.article-title a { color: inherit; transition: color 0.3s ease; }
+.article-title a:hover { color: #e40206; }
+
+.article-excerpt {
+    font-size: 1.3rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ======================== FEATURES SECTION STYLES ======================== */
+.features-section {
+    background-color: #fff; /* Color kept */
+    padding: 30px 0;
+    border-radius: 15px;
+    /* background-image: url('...'); */
+}
+.features-section .container { max-width: 1320px; margin: 0 auto; padding: 0 15px; }
+.features-container { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
+.feature-item { text-align: center; color: #444; flex: 1; padding: 10px; min-width: 120px; max-width: 180px; }
+.feature-icon { background-color: #f1f3ff; border-radius: 50%; width: 65px; height: 65px; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; position: relative; }
+.feature-icon i { color: #5d6aef; font-size: 2.6rem; }
+.feature-icon .plus-seven { position: absolute; top: 2px; right: 2px; background-color: #5d6aef; color: #fff; font-size: 0.9rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; line-height: 18px; text-align: center; border: 1px solid #fff; }
+.feature-item span { font-size: 1.4rem; font-weight: 500; }
+
+
+/* ======================== FINAL FOOTER STYLES (REVISED - V2) ======================== */
+.final-footer {
+    background-color: #ffffff;
+    padding-top: 40px; /* Add padding above the white box */
+    position: relative;
+    /* display: block; Default */
+}
+
+/* --- کادر سفید ویجت ها --- */
+.footer-widget-area {
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 40px; /* Space below the white box */
+    margin-top: -177px;
+
+}
+
+/* --- Grid کانتینر داخلی ویجت ها --- */
+.footer-widgets-container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr 1fr; /* Adjust column ratios as needed */
+    gap: 40px; /* Increased gap */
+}
+
+/* --- استایل های عمومی ویجت ها --- */
+.widget-title { font-size: 1.6rem; font-weight: 700; color: #333; margin-bottom: 20px; position: relative; padding-right: 15px; }
+.widget-title::before { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 12px; height: 4px; background-color: #e40206; border-radius: 2px; }
+
+/* Specific Widget Adjustments (Padding removed from here, added to area) */
+.footer-widget.about-widget {
+    background-color: #f0f0f0;
+    padding: 25px; /* Padding inside the grey box */
+    border-radius: 15px; /* Rounding for the grey box */
+}
+.about-widget p { font-size: 1.3rem; color: #555; line-height: 1.9; margin-bottom: 25px; text-align: justify; }
+.btn-widget { background-color: #f1f2f4; color: #555; border: none; border-radius: 25px; padding: 8px 25px; font-size: 1.3rem; font-weight: 500; transition: all 0.3s ease; display: inline-block; }
+.btn-widget:hover { background-color: #e4e6e9; color: #333; }
+.links-widget .links-columns { display: flex; gap: 30px; /* Space between columns */ }
+.links-widget ul { padding: 0; margin: 0; flex: 1; }
+.links-widget li { margin-bottom: 14px; }
+.links-widget a { font-size: 1.4rem; color: #444; transition: color 0.3s ease; position: relative; padding-right: 15px; display: block; }
+.links-widget a::before { content: '•'; position: absolute; right: 0; top: 0px; color: #e40206; font-size: 1.3em; line-height: 1; }
+.links-widget a:hover { color: #e40206; }
+.contact-widget p, .contact-widget a.contact-email { font-size: 1.3rem; color: #555; line-height: 1.8; margin-bottom: 12px; }
+.contact-widget a.contact-email { display: inline-block; background-color: #fff0e6; color: #dd5a00; padding: 4px 12px; border-radius: 15px; text-align: center; font-weight: 500; transition: background-color 0.3s ease; margin-bottom: 15px; }
+.contact-widget a.contact-email:hover { background-color: #ffe8d9; }
+.contact-widget .contact-phones { font-weight: 800; font-size: 2.4rem; color: #e40206; margin-bottom: 15px; line-height: 1.2; direction: ltr; text-align: right; }
+.contact-widget .contact-phones span { margin-left: 5px; }
+.contact-widget .contact-phones small { font-size: 1.3rem; font-weight: 500; color: #777; margin-right: 0; position: relative; top: -2px; }
+.contact-widget .contact-support { font-weight: 500; margin-top: 15px; font-size: 1.3rem; color: #666; }
+
+/* --- Awards Section --- */
+.awards-section {
+    padding: 30px 0;
+    margin-bottom: 30px;
+    /* display: block; Default */
+}
+.awards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.awards-container img {
+    height: auto;
+    width: auto;
+    max-height: 70px; /* Limit height */
+    object-fit: contain;
+    filter: grayscale(70%);
+    opacity: 0.8; /* Slightly faded */
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.awards-container img:hover { opacity: 1; filter: grayscale(0%); }
+
+/* ======================== Footer Bottom Bar ======================== */
+.footer-bottom-bar {
+    background-color: #fff;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    /* display: block; Default */
+}
+.footer-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.copyright-text {
+    font-size: 1.3rem;
+    color: #555;
+    margin: 0;
+    text-align: right;
+    flex-basis: auto; /* Allow natural sizing */
+    order: 1;
+}
+.copyright-text a { color: #333; font-weight: 700; transition: color 0.3s ease; }
+.copyright-text a:hover { color: #e40206; }
+
+/* Desktop Back-to-Top Button (in footer bar) */
+.footer-back-to-top {
+    margin-left: 214px;
+    background-color: #212529;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+    order: 2;
+    position: static; /* Static positioning within the bar */
+    opacity: 1; /* Visible by default on desktop */
+    visibility: visible;
+    /* display: flex; Default */
+}
+.footer-back-to-top:hover {
+    background-color: #343a40;
+    transform: translateY(-3px);
+}
+/* Hide if JS adds styles for scroll position */
+.footer-back-to-top[style*="opacity: 0"] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-basis: auto; /* Allow natural sizing */
+    order: 3;
+}
+.footer-social a { color: #777; font-size: 1.9rem; transition: color 0.3s ease; }
+.footer-social a:hover { color: #333; }
+
+
+/* ======================== SWIPER GENERAL STYLES ======================== */
+.swiper-slide { height: auto; display: flex; /* Ensure slides are flex containers */ }
+.product-slider-container, .product-slider-container-B, .bestseller-slider {
+    overflow: hidden;
+    padding: 5px; /* Add padding to prevent shadow clipping */
+    margin: -5px; /* Counteract padding */
+}
+/* Hide scrollbar */
+.product-slider-container::-webkit-scrollbar, .product-slider-container-B::-webkit-scrollbar, .bestseller-slider::-webkit-scrollbar { display: none; }
+.product-slider-container, .product-slider-container-B, .bestseller-slider { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* ======================================================================= */
+/* ======================== MOBILE RESPONSIVE STYLES ======================== */
+/* ======================================================================= */
+
+/* --- Default state (Hidden on Desktop) --- */
+.mobile-header,
+.mobile-bottom-nav,
+.mobile-menu,
+.mobile-menu-overlay {
+    display: none; /* Hide all mobile elements by default */
+}
+
+
+/* --- Apply styles below this breakpoint (e.g., 768px or 992px) --- */
+@media (max-width: 767px) {
+
+    html { font-size: 9.5px; } /* Adjusted base font */
+    .container { padding: 0 10px; }
+
+    /* --- Hide Desktop Elements --- */
+    .site-header, /* Hide the entire desktop header */
+
+
+    .back-to-top { /* Hide desktop back-to-top if it exists outside footer */
+        display: none !important;
+    }
+    /* Hide desktop slider controls if they conflict */
+    .slider-header .section-controls .btn-outline,
+    .slider-header .section-controls .slider-nav-arrow {
+        /* display: none; */ /* Optionally hide desktop arrows/buttons if needed */
+    }
+    /* Hide the specific desktop footer back-to-top */
+    .footer-back-to-top {
+        display: none !important;
+    }
+
+
+    /* --- Adjust Body/Main for Fixed Elements --- */
+    body {
+        /* Add padding to prevent content from hiding under fixed header/nav */
+        /* *** Adjust these values based on the final height of your mobile header and nav *** */
+        padding-top: 60px; /* Approx height of mobile header */
+        padding-bottom: 65px; /* Approx height of bottom nav */
+    }
+
+    .main-content {
+        padding-top: 20px; /* Adjust top padding */
+
+
+    }
+
+    /* --- Show and Style Mobile Header --- */
+    .mobile-header {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        height: 60px; /* *** Adjust height as needed *** */
+    }
+
+    .mobile-action-btn {
+        background: none;
+        border: none;
+        color: #555;
+        font-size: 20px; /* Adjust icon size */
+        padding: 8px;
+        cursor: pointer;
+        position: relative;
+    }
+    .mobile-action-btn:hover {
+        color: #000;
+    }
+
+    .hamburger-menu {
+        font-size: 22px;
+    }
+
+    .mobile-logo {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 35px; /* *** Adjust logo height *** */
+    }
+    .mobile-logo img {
+        height: 100%;
+        width: auto;
+    }
+
+    .mobile-header-left-actions {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .mobile-cart-icon {
+        position: relative;
+    }
+
+    .mobile-cart-count,
+    .mobile-cart-count-bottom { /* Style for cart count badge */
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: #e40206; /* Red badge */
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        border: 1px solid #fff;
+    }
+    .mobile-cart-count-bottom {
+        top: 2px;
+        right: 10px; /* Adjust position */
+    }
+
+
+    /* --- Mobile Search Bar --- */
+    .mobile-search-bar {
+        background-color: #f1f2f4;
+        padding: 10px;
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 60px; /* Matches header height */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
+    }
+    .mobile-search-bar.active {
+        display: flex;
+        align-items: center;
+    }
+    .mobile-search-bar form { display: flex; width: 100%; } /* Ensure form takes full width */
+    .mobile-search-bar input[type="search"] {
+        flex-grow: 1;
+        border: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        border-radius: 20px 0 0 20px;
+        background-color: #fff;
+        margin-left: -1px;
+        -webkit-appearance: none; /* Remove default iOS styling */
+    }
+    .mobile-search-bar input[type="search"]:focus {
+        outline: none;
+    }
+    .mobile-search-bar button {
+        background-color: #5d6aef;
+        border: none;
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 0 20px 20px 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+
+    /* --- Show and Style Mobile Bottom Navigation --- */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px; /* *** Adjust height *** */
+        background-color: #fff;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px 0;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        color: #888;
+        font-size: 11px;
+        text-align: center;
+        position: relative;
+        padding: 5px 0;
+        transition: color 0.2s ease;
+    }
+    .nav-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+    .nav-item.active {
+        color: #e40206;
+        font-weight: 600;
+    }
+    .nav-item:hover {
+        color: #555;
+    }
+    .cart-nav-item {
+        position: relative;
+    }
+
+
+    /* --- Style Mobile Off-Canvas Menu --- */
+    .mobile-menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1010;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    }
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Start off-screen */
+        width: 280px; /* *** Menu width *** */
+        max-width: 85%; /* Max width */
+        height: 100%;
+        background-color: #fff;
+        z-index: 1020;
+        box-shadow: -3px 0 10px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    .mobile-menu.active {
+        right: 0; /* Slide in */
+    }
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+    .mobile-menu-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+    }
+    .close-menu-btn {
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: #888;
+        cursor: pointer;
+        line-height: 1;
+        padding: 0 5px;
+    }
+    .close-menu-btn:hover {
+        color: #000;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .mobile-menu li {
+        margin-bottom: 5px;
+    }
+    .mobile-menu a {
+        display: flex; /* Use flex for icon alignment */
+        align-items: center;
+        padding: 12px 10px;
+        color: #444;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 5px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .mobile-menu a i {
+        margin-left: 12px; /* Space after icon (RTL) */
+        font-size: 1.1em;
+        width: 20px;
+        text-align: center;
+        color: #777;
+        transition: color 0.2s ease;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu li.current-menu-item a {
+        background-color: #f1f2f4;
+        color: #e40206;
+    }
+    .mobile-menu a:hover i {
+        color: #e40206; /* Change icon color on hover too */
+    }
+    .mobile-menu hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+    }
+
+
+    /* --- Minor Adjustments for Content on Mobile --- */
+
+    /* General Section Spacing */
+    .hero-section, .promo-section, .product-slider-section, .dual-banner-section,
+    .product-grid-section, .wide-banner-section, .category-tabs-section,
+    .category-product-slider, .category-icons-section, .digikala-showcase-section,
+    .latest-articles-section, .features-section {
+        margin-bottom: 30px; /* Reduced spacing */
+    }
+
+    /* Slider Controls */
+    .slider-nav-arrow {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+
+    /* Section Header */
+    .section-header.slider-header {
+        flex-direction: column; /* Stack title and controls */
+        align-items: flex-start; /* Align to start */
+        gap: 10px;
+    }
+    .slider-header .section-controls {
+        width: 100%;
+        justify-content: space-between; /* Space out button and arrows */
+    }
+    .section-title { font-size: 1.9rem;}
+    .section-title .highlight-red { font-size: 2.2rem; }
+    .dots-pattern-header { display: none; } /* Hide dots */
+    .section-subtitle { font-size: 1.3rem;}
+
+    /* Product Card */
+    .product-card {
+        padding: 10px;
+    }
+    .product-image-wrapper img {
+        height: 140px; /* Adjust image height */
+    }
+    .product-info h3 {
+        font-size: 1.25rem; /* Slightly smaller */
+        height: 3.8em; /* Adjust height if needed */
+        line-height: 1.4;
+        margin-bottom: 6px;
+    }
+    .price-container {
+        min-height: 3.5em;
+        margin-bottom: 5px;
+    }
+    .original-price {
+        font-size: 1.15rem;
+    }
+    .current-price {
+        font-size: 1.4rem;
+    }
+    .current-price .currency {
+        font-size: 1rem;
+    }
+    .product-actions {
+        padding-top: 8px;
+        margin-top: 8px;
+        gap: 6px;
+    }
+    .action-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 1.2rem;
+    }
+
+    /* Category Tabs */
+    .category-tabs-section {
+        justify-content: center; /* Center tabs on mobile */
+        margin-bottom: 20px;
+    }
+    .category-tabs {
+        padding: 4px;
+        overflow-x: auto; /* Allow horizontal scroll if needed */
+        white-space: nowrap; /* Prevent wrapping */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: none; /* Firefox */
+    }
+    .category-tabs::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+    .tab-btn {
+        padding: 7px 18px;
+        font-size: 1.35rem;
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    /* Category Product Slider Arrows */
+    .category-product-slider .product-slider-container-B {
+        padding: 5px 35px;
+        margin: -5px -35px;
+    }
+    .category-product-slider .slider-arrow-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.3rem;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Hero Section */
+    .hero-section { grid-template-columns: 1fr; gap: 15px; }
+    .hero-main, .hero-side {
+        min-height: 220px; /* Adjust min height */
+        padding: 25px 15px;
+    }
+    .hero-main .hero-content h2 { font-size: 2.2rem; }
+    .hero-main .hero-content p { font-size: 1.4rem; margin-bottom: 15px; }
+    .hero-side .hero-content h2 { font-size: 1.9rem; }
+    .slider-controls { display: none; } /* Hide desktop slider controls */
+
+
+    /* Promo Section */
+    .promo-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .promo-item { min-height: 180px; }
+    .promo-wide { order: 1; padding: 20px;}
+    .promo-wide h2 { font-size: 2rem; }
+    .promo-1 { order: 2; }
+    .promo-2 { order: 3; }
+
+    /* Wide Banner */
+    .wide-banner-section {
+        padding: 150px 20px 20px; /* Adjust padding */
+        background-position: center top; /* Adjust position */
+    }
+
+    /* Category Icons */
+    .category-icons-section {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+        justify-content: space-evenly;
+    }
+    .category-icon-item {
+        max-width: 100px;
+        flex-basis: 30%; /* ~3 icons per row */
+        min-width: 80px;
+    }
+    .icon-wrapper { width: 50px; height: 50px; }
+    .icon-wrapper i { font-size: 2rem; }
+    .category-icon-item span { font-size: 1.2rem; }
+
+    /* Showcase Section */
+    .digikala-showcase-section { padding: 20px 0; }
+    .showcase-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    .showcase-content { order: 2; text-align: center; }
+    .showcase-image { order: 1; max-width: 85%; margin-bottom: 15px; }
+    .showcase-image::before, .dots-pattern-showcase { display: none; }
+    .showcase-top { text-align: center; margin-bottom: 15px;}
+    .showcase-title { font-size: 2.4rem; display: inline-block; margin-bottom: 15px;}
+    .showcase-title::after { left: 50%; transform: translateX(-50%); }
+    .showcase-description { font-size: 1.3rem; text-align: center; line-height: 1.7; }
+    .showcase-bottom {
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center items */
+        justify-content: center;
+        gap: 15px;
+        padding-top: 15px;
+        width: 100%; /* Take full width */
+    }
+    .showcase-bottom .working-hours { margin-bottom: 0;}
+
+    /* Articles Section */
+    .latest-articles-section { padding: 25px 0; }
+    .latest-articles-section .articles-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .article-title { font-size: 1.6rem; }
+    .article-content { padding: 15px 20px; }
+    .article-image img { height: 180px; }
+
+    /* Features Section */
+    .features-section { padding: 20px 0; }
+    .features-container {
+        gap: 8px;
+        justify-content: space-evenly;
+    }
+    .feature-item {
+        flex-basis: 45%; /* Two features per row */
+        min-width: 100px;
+        padding: 8px;
+    }
+    .feature-icon { width: 50px; height: 50px; margin-bottom: 8px;}
+    .feature-icon i { font-size: 2.1rem; }
+    .feature-item span { font-size: 1.25rem; }
+
+    /* Footer adjustments */
+
+
+
+} /* End of @media (max-width: 767px) */
+
+
+/* --- Optional: Larger Mobile / Small Tablet Adjustments --- */
+/* @media (min-width: 768px) and (max-width: 991px) { */
+/* Add specific styles for tablets if needed */
+/* For example, maybe keep desktop header but adjust layout */
+/* } */
+@media (max-width: 767px) {
+    /* ... سایر استایل های موبایل ... */
+
+    /* --- Styling for Footer Bottom Bar on Mobile --- */
+    .final-footer {
+        padding-top: 20px; /* Adjust padding if needed */
+        display: block !important; /* Ensure footer container is visible */
+    }
+
+    /* Hide widget area and awards specifically */
+    .footer-widget-area,
+    .awards-section {
+        display: none !important;
+    }
+
+    .footer-bottom-bar {
+        display: block !important; /* Ensure bottom bar itself is visible */
+        padding: 25px 0; /* Add padding */
+        border-top: 1px solid #eee; /* Keep top border */
+    }
+
+    .footer-bar-container {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+        text-align: center; /* Center text */
+        gap: 20px; /* Add gap between stacked items */
+    }
+
+    .copyright-text {
+        order: 2; /* Copyright second */
+        width: 100%;
+        margin: 0; /* Remove default margins */
+        font-size: 1.2rem;
+        text-align: center; /* Explicitly center */
+    }
+
+    .footer-social {
+        order: 1; /* Social icons first */
+        width: 100%;
+        justify-content: center; /* Center icons */
+        gap: 20px; /* Adjust gap */
+    }
+
+    /* Keep hiding the desktop back-to-top button */
+    .footer-back-to-top {
+        display: none !important;
+    }
+
+    /* --- سایر استایل های موبایل --- */
+    /* ... */
+}

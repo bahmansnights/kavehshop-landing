@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه کاوه</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- *** لینک به فایل CSS نهایی *** -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========== DESKTOP HEADER (Will be hidden on mobile) ========== -->
+<header class="site-header">
+    <div class="header-top">
+        <div class="container header-top-container">
+            <div class="header-top-right">
+                <a href="#" class="logo">
+                    <img src="./images/logohead.svg" alt="کالاون">
+                </a>
+            </div>
+            <div class="header-top-left">
+                <div class="search-container">
+                    <form action="#">
+                        <input type="search" placeholder="جستجوی محصول">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="action-btn wishlist-btn"> <i class="fa fa-heart"></i> </a>
+                    <a href="#" class="action-btn login-btn"> <i class="fa fa-user"></i> <span>ورود/ثبت نام</span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container header-bottom-container">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">خانه</a><i class="fa fa-chevron-down nav-arrow"></i></li>
+                    <li><a href="#">فروشگاه</a><i class="fa fa-chevron-down nav-arrow"></i></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">بلاگ</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cart-btn">
+                <i class="fa fa-shopping-bag"></i>
+                <span class="cart-count">0</span> <!-- Example count for desktop -->
+            </a>
+        </div>
+    </div>
+</header>
+<!-- ========== END DESKTOP HEADER ========== -->
+
+<!-- ========== MOBILE HEADER (Visible only on mobile) ========== -->
+<header class="mobile-header">
+    <div class="mobile-header-container">
+        <button class="mobile-action-btn hamburger-menu" id="hamburger-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="mobile-logo">
+            <img src="./images/logohead.svg" alt="کالاون"> <!-- *** مسیر لوگو موبایل *** -->
+        </a>
+        <div class="mobile-header-left-actions">
+            <button class="mobile-action-btn mobile-search-icon" id="mobile-search-toggle">
+                <i class="fas fa-search"></i>
+            </button>
+            <a href="#" class="mobile-action-btn mobile-cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="mobile-cart-count">9</span> <!-- *** تعداد نمونه سبد خرید موبایل *** -->
+            </a>
+        </div>
+    </div>
+    <div class="mobile-search-bar" id="mobile-search-bar">
+        <form action="#">
+            <input type="search" placeholder="جستجوی محصول...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+</header>
+<!-- ========== END MOBILE HEADER ========== -->
+
+<!-- ========== MOBILE OFF-CANVAS MENU ========== -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<nav class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+        <span class="mobile-menu-title">منو</span>
+        <button class="close-menu-btn" id="close-menu-btn">×</button>
+    </div>
+    <ul>
+        <!-- Links copied from desktop main-nav -->
+        <li><a href="#">خانه</a></li>
+        <li><a href="#">فروشگاه</a></li>
+        <li><a href="#">درباره ما</a></li>
+        <li><a href="#">تماس با ما</a></li>
+        <li><a href="#">بلاگ</a></li>
+        <hr> <!-- Separator -->
+        <li><a href="#"><i class="fa fa-user"></i> ورود / ثبت نام</a></li>
+        <li><a href="#"><i class="fa fa-heart"></i> لیست علاقه مندی</a></li>
+    </ul>
+</nav>
+<!-- ========== END MOBILE OFF-CANVAS MENU ========== -->
+
+<main class="main-content">
+    <div class="container">
+
+        <section class="hero-section">
+            <div class="hero-main">
+                <div class="hero-content"></div>
+                <div class="slider-controls">
+                    <button class="slider-arrow prev"><i class="fa fa-chevron-right"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span> <span class="dot"></span> <span class="dot"></span>
+                    </div>
+                    <button class="slider-arrow next"><i class="fa fa-chevron-left"></i></button>
+                </div>
+            </div>
+            <div class="hero-side">
+                <div class="hero-content"></div>
+            </div>
+        </section>
+
+        <section class="promo-section">
+            <div class="promo-item promo-wide">
+                <div class="promo-content">
+                    <div class="dots-pattern"></div>
+                </div>
+            </div>
+            <div class="promo-item promo-small promo-1"></div>
+            <div class="promo-item promo-small promo-2"></div>
+        </section>
+
+        <section class="product-slider-section">
+            <div class="section-header slider-header">
+                <div class="section-title-container">
+                    <h2 class="section-title">پیشنهاد <span class="highlight-red">شگفت انگیز</span></h2>
+                    <div class="dots-pattern-header"></div>
+                    <p class="section-subtitle">محصولات تخفیف دار</p>
+                </div>
+                <div class="section-controls">
+                    <a href="#" class="btn btn-outline">مشاهده همه</a>
+                    <!-- این دکمه ها در موبایل میتوانند با استایل های موبایل نمایش داده شوند یا مخفی شوند -->
+                    <button class="slider-nav-arrow prev swiper-nav-prev-amazing"><i class="fas fa-chevron-right"></i></button>
+                    <button class="slider-nav-arrow next swiper-nav-next-amazing"><i class="fas fa-chevron-left"></i></button>
+                </div>
+            </div>
+            <div class="swiper product-slider-container">
+                <div class="swiper-wrapper">
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr1.png" alt="تبلت اپل"> <span class="discount-badge badge-red">۳۹ %</span> </div> <div class="product-info"> <h3>تبلت اپل مدل iPad Air ۵th generation Wi-Fi ظرفیت ۲۵۶</h3> <div class="price-container"> <span class="original-price">۳۷,۷۸۰,۰۰۰</span> <span class="current-price">۲۵,۷۸۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr2.png" alt="هدست"> </div> <div class="product-info"> <h3>هدست مخصوص بازی بلوتوثی اونیکوما مدل B۶۰</h3> <div class="price-container"> <span class="original-price">۶۹۹,۰۰۰</span> <span class="current-price">۴۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr3.png" alt="ساعت اپل"> <span class="discount-badge badge-red">۸ %</span> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ سری ۷ مدل ۴۵mm Stainless Steel Case</h3> <div class="price-container"> <span class="original-price">۵,۴۰۰,۰۰۰</span> <span class="current-price">۴,۹۹۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr4.png" alt="ساعت سامسونگ"> </div> <div class="product-info"> <h3>ساعت هوشمند سامسونگ مدل Galaxy Watch ۵ ۴۴mm</h3> <div class="price-container"> <span class="original-price">۶,۹۹۹,۰۰۰</span> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr5.png" alt="ساعت سامسونگ"> </div> <div class="product-info"> <h3>ساعت هوشمند سامسونگ مدل Galaxy Watch ۵ ۴۴mm</h3> <div class="price-container"> <span class="original-price">۶,۹۹۹,۰۰۰</span> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr4.png" alt="ساعت سامسونگ"> </div> <div class="product-info"> <h3>ساعت هوشمند سامسونگ مدل Galaxy Watch ۵ ۴۴mm</h3> <div class="price-container"> <span class="original-price">۶,۹۹۹,۰۰۰</span> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr4.png" alt="ساعت سامسونگ"> </div> <div class="product-info"> <h3>ساعت هوشمند سامسونگ مدل Galaxy Watch ۵ ۴۴mm</h3> <div class="price-container"> <span class="original-price">۶,۹۹۹,۰۰۰</span> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr4.png" alt="ساعت سامسونگ"> </div> <div class="product-info"> <h3>ساعت هوشمند سامسونگ مدل Galaxy Watch ۵ ۴۴mm</h3> <div class="price-container"> <span class="original-price">۶,۹۹۹,۰۰۰</span> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pr5.png" alt="ساعت اپل الترا"> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ مدل Ultra ۴۹ mm Alpine Loop</h3> <div class="price-container"> <span class="original-price">۳۶,۴۰۰,۰۰۰</span> <span class="current-price">۲۵,۸۷۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                </div>
+            </div>
+            <div class="load-more-indicator"> <i class="fa fa-chevron-down"></i> </div>
+        </section>
+
+        <section class="dual-banner-section">
+            <div class="banner-item banner-watch"> </div>
+            <div class="banner-item banner-phone"> </div>
+        </section>
+
+        <section class="product-slider-section">
+            <!-- ... (محتوای این اسلایدر مثل اسلایدر بالا) ... -->
+            <div class="section-header slider-header">
+                <div class="section-title-container">
+                    <h2 class="section-title">
+                        پرفروش ترین های
+                        <br>
+                        <span class="highlight-red">گوشی موبایل</span>
+                    </h2>
+                </div>
+                <div class="section-controls">
+                    <a href="#" class="btn btn-outline">مشاهده همه</a>
+                    <button class="slider-nav-arrow prev swiper-nav-prev-bestseller"><i class="fas fa-chevron-right"></i></button>
+                    <button class="slider-nav-arrow next swiper-nav-next-bestseller"><i class="fas fa-chevron-left"></i></button>
+                </div>
+            </div>
+            <div class="swiper product-slider-container bestseller-slider"> <!-- *** کلاس جدید برای تفکیک swiper *** -->
+                <div class="swiper-wrapper">
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pro1.png" alt="ساعت اپل"> <span class="discount-badge badge-yellow">۸ % <i class="fa fa-tag"></i></span> <div class="color-variants"> <span class="color-dot" style="background-color: #ADD8E6;"></span> </div> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ سری ۷ مدل ۴۵mm Stainless Steel Case with</h3> <div class="price-container"> <span class="original-price">۵,۴۰۰,۰۰۰</span> <span class="current-price">۴,۹۹۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> <div class="product-actions"> <button class="action-icon"><i class="far fa-heart"></i></button> <button class="action-icon"><i class="far fa-eye"></i></button> <button class="action-icon"><i class="fa fa-shopping-cart"></i></button> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pro2.png" alt="ساعت سامسونگ"> <span class="discount-badge badge-yellow">۵ % <i class="fa fa-tag"></i></span> <div class="color-variants"> <span class="color-dot" style="background-color: #ADD8E6;"></span> <span class="color-dot" style="background-color: #333;"></span> <span class="color-dot" style="background-color: #ccc;"></span> </div> </div> <div class="product-info"> <h3>ساعت هوشمند سامسونگ مدل Galaxy Watch ۵ ۴۴mm</h3> <div class="price-container"> <span class="original-price">۶,۹۹۹,۰۰۰</span> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> <div class="product-actions"> <button class="action-icon"><i class="far fa-heart"></i></button> <button class="action-icon"><i class="far fa-eye"></i></button> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pro3.png" alt="ساعت اپل SE"> <div class="color-variants"> <span class="color-dot" style="background-color: #C4A484;"></span> <span class="color-dot" style="background-color: #333;"></span> <span class="color-dot" style="background-color: #ccc;"></span> </div> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ سری SE ۲۰۲۱ مدل ۴۰mm Aluminum Case with Sport</h3> <div class="price-container"> <span class="current-price">۹,۲۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> <div class="product-actions"> <button class="action-icon"><i class="far fa-heart"></i></button> <button class="action-icon"><i class="far fa-eye"></i></button> <button class="action-icon"><i class="fa fa-shopping-cart"></i></button> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pro4.png" alt="ساعت اپل الترا"> <span class="discount-badge badge-yellow">۱۱ % <i class="fa fa-tag"></i></span> <div class="color-variants"> <span class="color-dot" style="background-color: #8FBC8F;"></span> <span class="color-dot" style="background-color: #333;"></span> <span class="color-dot" style="background-color: #FFA500;"></span> </div> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ مدل Ultra ۴۹ mm Alpine Loop</h3> <div class="price-container"> <span class="original-price">۳۵,۸۷۰,۰۰۰</span> <span class="current-price">۳۶,۴۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> <div class="product-actions"> <button class="action-icon"><i class="far fa-heart"></i></button> <button class="action-icon"><i class="far fa-eye"></i></button> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pro4.png" alt="ساعت اپل الترا"> <span class="discount-badge badge-yellow">۱۱ % <i class="fa fa-tag"></i></span> <div class="color-variants"> <span class="color-dot" style="background-color: #8FBC8F;"></span> <span class="color-dot" style="background-color: #333;"></span> <span class="color-dot" style="background-color: #FFA500;"></span> </div> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ مدل Ultra ۴۹ mm Alpine Loop</h3> <div class="price-container"> <span class="original-price">۳۵,۸۷۰,۰۰۰</span> <span class="current-price">۳۶,۴۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> <div class="product-actions"> <button class="action-icon"><i class="far fa-heart"></i></button> <button class="action-icon"><i class="far fa-eye"></i></button> </div> </article>
+                    <article class="swiper-slide product-card"> <div class="product-image-wrapper">
+                        <img src="./images/pro4.png" alt="ساعت اپل الترا"> <span class="discount-badge badge-yellow">۱۱ % <i class="fa fa-tag"></i></span> <div class="color-variants"> <span class="color-dot" style="background-color: #8FBC8F;"></span> <span class="color-dot" style="background-color: #333;"></span> <span class="color-dot" style="background-color: #FFA500;"></span> </div> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ مدل Ultra ۴۹ mm Alpine Loop</h3> <div class="price-container"> <span class="original-price">۳۵,۸۷۰,۰۰۰</span> <span class="current-price">۳۶,۴۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> <div class="product-actions"> <button class="action-icon"><i class="far fa-heart"></i></button> <button class="action-icon"><i class="far fa-eye"></i></button> </div> </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="wide-banner-section">
+            <div class="banner-content"></div>
+        </section>
+
+        <section class="category-tabs-section">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="موبایل">موبایل</button>
+                <button class="tab-btn" data-category="ساعت">ساعت</button>
+                <button class="tab-btn" data-category="تبلت">تبلت</button>
+            </div>
+        </section>
+
+        <section class="product-slider-section category-product-slider">
+            <div class="swiper product-slider-container-B">
+                <div class="swiper-wrapper">
+                    <article class="swiper-slide product-card simple-card" data-category="موبایل"> <div class="product-image-wrapper">
+                        <img src="./images/prod1.png" alt="گوشی شیائومی"> </div> <div class="product-info"> <h3>گوشی موبایل شیائومی مدل Redmi Note ۱۱ دو سیم کارت ظرفیت ۱۲۸</h3> <div class="price-container single-price"> <span class="current-price">۵,۵۸۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="موبایل"> <div class="product-image-wrapper">
+                        <img src="./images/prod2.png" alt="گوشی سامسونگ A۱۳"> </div> <div class="product-info"> <h3>گوشی موبایل سامسونگ مدل Galaxy A۱۳ SM-A۱۳۷F/DS دو سیم کارت</h3> <div class="price-container single-price"> <span class="current-price">۴,۹۸۹,۰۰۰ – ۴,۳۸۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="ساعت"> <div class="product-image-wrapper">
+                        <img src="./images/pr1.png" alt="ساعت اپل الترا"> <span class="discount-badge badge-red">۱۱ %</span> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ مدل Ultra ۴۹ mm Alpine Loop</h3> <div class="price-container"> <span class="original-price">۳۵,۸۷۰,۰۰۰</span> <span class="current-price">۳۶,۴۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="موبایل"> <div class="product-image-wrapper">
+                        <img src="./images/prod1.png" alt="گوشی سامسونگ A۳۲"> </div> <div class="product-info"> <h3>گوشی موبایل سامسونگ مدل Galaxy A۳۲ SM-A۳۲۵F/DS دو سیم‌کارت</h3> <div class="price-container single-price"> <span class="current-price">۶,۵۹۹,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="موبایل"> <div class="product-image-wrapper">
+                        <img src="./images/prod2.png"> </div> <div class="product-info"> <h3>گوشی موبایل شیائومی مدل ۱۲ Pro ۲۲۰۱۱۲۳G</h3> <div class="price-container single-price"> <span class="current-price">۱۹,۹۹۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="تبلت"> <div class="product-image-wrapper">
+                        <img src="./images/prod10.png" alt="تبلت نمونه"> </div> <div class="product-info"> <h3>تبلت نمونه مدل XYZ ۱۲۸ گیگابایت</h3> <div class="price-container single-price"> <span class="current-price">۷,۲۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="تبلت"> <div class="product-image-wrapper">
+                        <img src="./images/prod9.png" alt="تبلت نمونه"> </div> <div class="product-info"> <h3>تبلت نمونه مدل XYZ ۱۲۸ گیگابایت</h3> <div class="price-container single-price"> <span class="current-price">۷,۲۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="تبلت"> <div class="product-image-wrapper">
+                        <img src="./images/prod8.png" alt="تبلت نمونه"> </div> <div class="product-info"> <h3>تبلت نمونه مدل XYZ ۱۲۸ گیگابایت</h3> <div class="price-container single-price"> <span class="current-price">۷,۲۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="تبلت"> <div class="product-image-wrapper">
+                        <img src="./images/prod11.png" alt="تبلت نمونه"> </div> <div class="product-info"> <h3>تبلت نمونه مدل XYZ ۱۲۸ گیگابایت</h3> <div class="price-container single-price"> <span class="current-price">۷,۲۰۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                    <article class="swiper-slide product-card simple-card" data-category="ساعت"> <div class="product-image-wrapper">
+                        <img src="./images/pr2.png" alt="ساعت اپل"> <span class="discount-badge badge-red">۸ %</span> </div> <div class="product-info"> <h3>ساعت هوشمند اپل واچ سری ۷ مدل ۴۵mm</h3> <div class="price-container"> <span class="original-price">۵,۴۰۰,۰۰۰</span> <span class="current-price">۴,۹۹۰,۰۰۰<span class="currency"> تومان</span></span> </div> </div> </article>
+                </div>
+                <div class="slider-nav-arrows">
+                    <button class="slider-arrow-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-arrow-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-icons-section">
+            <div class="category-icon-item"> <div class="icon-wrapper"> <i class="fas fa-headphones-alt"></i> </div> <span>هندزفری</span> </div>
+            <div class="category-icon-item"> <div class="icon-wrapper"> <i class="fas fa-mobile-alt"></i> </div> <span>موبایل</span> </div>
+            <div class="category-icon-item"> <div class="icon-wrapper"> <i class="fas fa-stopwatch"></i> </div> <span>ساعت هوشمند</span> </div>
+            <div class="category-icon-item"> <div class="icon-wrapper"> <i class="fas fa-headset"></i> </div> <span>هدفون</span> </div>
+            <div class="category-icon-item"> <div class="icon-wrapper"> <i class="fas fa-tablet-alt"></i> </div> <span>تبلت</span> </div>
+        </section>
+
+        <section class="digikala-showcase-section">
+            <div class="container showcase-container">
+                <div class="showcase-image">
+                    <img src="./images/shopdigi.png" alt="Showcase Image">
+                    <div class="dots-pattern-showcase"></div>
+                </div>
+                <div class="showcase-content">
+                    <div class="showcase-top">
+                        <div class="social-icons"> <a href="#"><i class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-telegram"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> </div>
+                    </div>
+                    <div class="showcase-main">
+                        <h3 class="showcase-subtitle">فروشگاه</h3>
+                        <h2 class="showcase-title">دیجی کالا</h2>
+                        <p class="showcase-description"> با بیش از سی سال سابقه خدمت به مشتریان در زمینه فروش ابزارآلات صنعتی و کارگاهی را دارا می باشد و با گردهم آوردن متخصصان این عرصه بالغ بر ده سال است که برند را به صورت تخصصی در زمینه ابزار آلات عرضه کرده است. همچنین برای ارائه هرچه تمام تر فعالیت خود از سال فروشگاه اینترنتی ابزار را راه اندازی نموده است. به مدیریت محمدرضا شروع به فعالیت کرده و همچنان با سرعت هرچه تمام تر در حال به روز رسانی فعالیت های خود و ارائه انواع خدمات به مشتریان گرامی در سراسر ایران به صورت حضوری و آنلاین می باشد و با توجه به صورت تخصصی در زمینه ابزار آلات مراجعه کرده است. همچنین برای ارائه هرچه تمام تر فعالیت خود از سال فروشگاه اینترنتی ابزار را راه اندازی نموده است. ابزار محسن به مدیریت محمدرضا شروع به فعالیت کرده و همچنان با سرعت هرچه تمام تر در حال به روز رسانی فعالیت های خود و ارائه انواع خدمات به مشتریان گرامی در سراسر ایران به صورت حضوری و آنلاین می باشد. </p>
+                    </div>
+                    <div class="showcase-bottom">
+                        <div class="working-hours"> <i class="far fa-clock"></i> <span>ساعت کار: ساعت ۹ الی ۱۹</span> </div>
+                        <a href="#" class="btn btn-more"> <span>بیشتر</span> <i class="fas fa-arrow-left"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-articles-section">
+            <div class="section-title-container">
+                <h2 class="section-title alt-title">
+                    جدیدترین
+                    <span class="highlight">مقالات </span>
+                    آموزشی
+                </h2>
+                <a href="#" class="section-read-more">بیشتر بخوانید</a>
+            </div>
+            <div class="articles-container">
+                <article class="article-card"> <a href="#" class="article-image-link"> <div class="article-image">
+                    <img src="./images/admin2.jpg" alt="آموزش ساخت کاور پست اینستاگرام"> <div class="article-tags"> <span class="tag tag-category">تکنولوژی</span> <span class="tag tag-date">۱۴۰۲-۰۲-۱۵</span> </div> </div> </a> <div class="article-content"> <h3 class="article-title"><a href="#">آموزش ساخت کاور پست اینستاگرام: تضمینی برو اکسپلور</a></h3> <p class="article-excerpt"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ...</p> </div> </article>
+                <article class="article-card"> <a href="#" class="article-image-link"> <div class="article-image">
+                    <img src="./images/admin1.jpg" alt="ادمین اینستاگرام"> <div class="article-tags"> <span class="tag tag-category">تکنولوژی</span> <span class="tag tag-date">۱۴۰۱-۰۵-۱۳</span> </div> </div> </a> <div class="article-content"> <h3 class="article-title"><a href="#">ادمین اینستاگرام؛ یک شغل پردرآمد و آسان</a></h3> <p class="article-excerpt"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ...</p> </div> </article>
+            </div>
+            <section class="features-section">
+                <div class="features-container">
+                    <div class="feature-item"> <div class="feature-icon"><i class="fas fa-headset"></i></div> <span>پشتیبانی آنلاین</span> </div>
+                    <div class="feature-item"> <div class="feature-icon"><i class="fas fa-shield-alt"></i></div> <span>ضمانت کالا</span> </div>
+                    <div class="feature-item"> <div class="feature-icon"><i class="fas fa-history"></i><span class="plus-seven">۷</span></div> <span>هفت روز ضمانت بازگشت</span> </div>
+                    <div class="feature-item"> <div class="feature-icon"><i class="fas fa-credit-card"></i></div> <span>پرداخت در محل</span> </div>
+                    <div class="feature-item"> <div class="feature-icon"><i class="fas fa-box-open"></i></div> <span>تحویل اکسپرس</span> </div>
+                </div>
+            </section>
+        </section>
+
+    </div><!-- End .container -->
+</main>
+
+<!-- ========== DESKTOP FOOTER ========== -->
+<footer class="site-footer final-footer">
+    <div class="container">
+        <div class="footer-widget-area">
+            <div class="footer-widgets-container">
+                <div class="footer-widget links-widget">
+                    <h4 class="widget-title">دسترسی سریع</h4>
+                    <div class="links-columns">
+                        <ul>
+                            <li><a href="#">دوره های آموزشی</a></li>
+                            <li><a href="#">اتاق خبر کاوه</a></li>
+                            <li><a href="#">فروش در کاوه</a></li>
+                            <li><a href="#">فرصت‌های شغلی</a></li>
+                            <li><a href="#">تماس با کاوه</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">سوالات متداول</a></li>
+                            <li><a href="#">قوانین و مقررات</a></li>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">گزارش باگ</a></li>
+                            <li><a href="#">همکاری با ما</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-widget about-widget">
+                    <h4 class="widget-title">فروشگاه اینترنتی</h4>
+                    <p> فعالیت خود را از سال ۱۳۹۸ در زمینه فروش کیف پول های سخت افزاری شروع نموده است . این مجموعه کالا های خود را بدون واسطه و از طریق شرکت های اصلی سازنده کیف پول های سخت افزاری به صورت مستقیم تامین می کند و همچنین ضمانت اصالت و سلامت کالا را به تمام مشتریان ارائه می دهد. هدف اصلی ما در و از طریق شرکت های اصلی سازنده کیف پول های سخت افزاری به صورت مستقیم تامین می کند </p>
+                    <a href="#" class="btn btn-widget">درباره ما</a>
+                </div>
+                <div class="footer-widget contact-widget">
+                    <h4 class="widget-title">تماس با ما</h4>
+                    <p>اصفهان، خیابان امام خمینی، جنب بیمه تامین اجتماعی ساختمان طبقه پنجم، واحد</p>
+                    <a href="mailto:info@sitename.com" class="contact-email">info[at]Sitename[dot]com</a>
+                    <p class="contact-phones">
+                        <span>۱۲۳۴۵۶۷۸</span> <small>۰۲۱</small> <br>
+                        <span>۱۲۳۴۵۶۷۸</span> <small>۰۲۱</small>
+                    </p>
+                    <p class="contact-support">پشتیبانی سریع</p>
+                </div>
+            </div>
+        </div>
+        <div class="awards-section">
+            <div class="awards-container">
+                <img src="./images/namad-01.png" alt="نماد اعتماد">
+                <img src="./images/namad-02.png"  alt="نماد ساماندهی">
+                <img src="./images/namad-03.png"  alt="جشنواره وب">
+                <img src="./images/namad-04.png"  alt="اتحادیه کشوری">
+                <img src="./images/namad-05.png"  alt="نماد فناوری">
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-bar">
+        <div class="container footer-bar-container">
+            <p class="copyright-text">کلیه حقوق این سایت متعلق به شرکت <a href="#">قالب کاوه</a> می باشد</p>
+            <a href="#" class="back-to-top footer-back-to-top"><i class="fas fa-arrow-up"></i></a>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ========== END DESKTOP FOOTER ========== -->
+
+<!-- ========== MOBILE BOTTOM NAVIGATION (Visible only on mobile) ========== -->
+<nav class="mobile-bottom-nav">
+    <a href="#" class="nav-item active"> <!-- *** کلاس active برای صفحه فعلی *** -->
+        <i class="fas fa-home"></i>
+        <span>خانه</span>
+    </a>
+    <a href="#" class="nav-item">
+        <i class="fas fa-th-large"></i> <!-- یا آیکن دیگر مثل fa-compass, fa-tags -->
+        <span>دسته بندی</span>
+    </a>
+    <a href="#" class="nav-item cart-nav-item">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="mobile-cart-count-bottom">9</span> <!-- *** تعداد نمونه سبد خرید پایین *** -->
+        <span>سبد خرید</span>
+    </a>
+    <a href="#" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>پروفایل</span>
+    </a>
+    <!-- میتونید آیکن بیشتر رو هم اضافه کنید
+    <a href="#" class="nav-item">
+        <i class="fas fa-ellipsis-h"></i>
+        <span>بیشتر</span>
+    </a> -->
+</nav>
+<!-- ========== END MOBILE BOTTOM NAVIGATION ========== -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // --- Original Swiper Initialization for First Slider ---
+        var swiper1 = new Swiper(".product-slider-container:not(.bestseller-slider):not(.product-slider-container-B)", { // *** More specific selector ***
+            slidesPerView: 2,
+            spaceBetween: 15,
+            navigation: { // Add navigation for mobile if desired
+                nextEl: ".product-slider-section:first-of-type .swiper-nav-next-amazing", // Target first slider's controls
+                prevEl: ".product-slider-section:first-of-type .swiper-nav-prev-amazing",
+            },
+            breakpoints: {
+                576: { slidesPerView: 3, spaceBetween: 20 },
+                768: { slidesPerView: 4, spaceBetween: 20 },
+                992: { slidesPerView: 4, spaceBetween: 20 },
+                1200: { slidesPerView: 4, spaceBetween: 20 }
+            },
+        });
+
+        // --- Original Swiper Initialization for Bestseller Slider ---
+        var swiperBestseller = new Swiper(".bestseller-slider", { // *** Use the new class ***
+            slidesPerView: 2,
+            spaceBetween: 15,
+            navigation: {
+                nextEl: ".bestseller-slider ~ .section-controls .swiper-nav-next-bestseller", // Adjust selector based on final HTML structure if needed
+                prevEl: ".bestseller-slider ~ .section-controls .swiper-nav-prev-bestseller",
+            },
+            breakpoints: {
+                576: { slidesPerView: 3, spaceBetween: 20 },
+                768: { slidesPerView: 4, spaceBetween: 20 },
+                992: { slidesPerView: 4, spaceBetween: 20 },
+                1200: { slidesPerView: 4, spaceBetween: 20 }
+            },
+        });
+
+
+        // --- Original Swiper Initialization for Category Slider ---
+        var swiper2 = new Swiper(".product-slider-container-B", {
+            slidesPerView: 2, // Keep 2 for mobile default
+            spaceBetween: 15,
+            navigation: {
+                nextEl: ".category-product-slider .slider-arrow-btn.next",
+                prevEl: ".category-product-slider .slider-arrow-btn.prev",
+            },
+            breakpoints: {
+                576: { slidesPerView: 3, spaceBetween: 20 },
+                768: { slidesPerView: 4, spaceBetween: 20 },
+                992: { slidesPerView: 4, spaceBetween: 20 },
+                1200: { slidesPerView: 4, spaceBetween: 20 }
+            },
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+        });
+
+        // --- Original Category Filter Logic ---
+        const categoryTabs = document.querySelectorAll('.category-tabs .tab-btn');
+        const categorySlides = document.querySelectorAll('.product-slider-container-B .swiper-slide');
+
+        function filterSlides(targetCategory) {
+            let hasVisibleSlides = false;
+            categorySlides.forEach(slide => {
+                slide.style.display = 'flex'; // Use flex as default
+                slide.classList.remove('swiper-slide-filtered');
+            });
+
+            categorySlides.forEach(slide => {
+                const slideCategory = slide.getAttribute('data-category');
+                if (slideCategory === targetCategory || targetCategory === 'all') {
+                    hasVisibleSlides = true;
+                } else {
+                    slide.style.display = 'none'; // Hide non-matching
+                    slide.classList.add('swiper-slide-filtered');
+                }
+            });
+
+            if (swiper2) {
+                swiper2.update(); // Update swiper instance
+                swiper2.slideTo(0, 0); // Go to first slide
+                setTimeout(() => {
+                    if(swiper2.navigation) {
+                        swiper2.navigation.update();
+                    }
+                }, 100);
+            }
+        }
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                if (tab.classList.contains('active')) return;
+
+                document.querySelector('.category-tabs .tab-btn.active').classList.remove('active');
+                tab.classList.add('active');
+                const targetCategory = tab.getAttribute('data-category');
+                filterSlides(targetCategory);
+            });
+        });
+
+        const initialActiveTab = document.querySelector('.category-tabs .tab-btn.active');
+        if (initialActiveTab) {
+            const initialActiveCategory = initialActiveTab.getAttribute('data-category');
+            filterSlides(initialActiveCategory);
+        } else if (categoryTabs.length > 0) {
+            categoryTabs[0].classList.add('active');
+            filterSlides(categoryTabs[0].getAttribute('data-category'));
+        }
+
+
+        // --- Original Back to Top Logic (Will be hidden on mobile by CSS) ---
+        const backToTopButton = document.querySelector('.back-to-top.footer-back-to-top');
+        if (backToTopButton) {
+            backToTopButton.style.opacity = '0';
+            backToTopButton.style.visibility = 'hidden';
+
+            window.addEventListener('scroll', () => {
+                // Only show on non-mobile screens (use CSS check)
+                if (window.getComputedStyle(backToTopButton).display !== 'none') {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.style.opacity = '1';
+                        backToTopButton.style.visibility = 'visible';
+                    } else {
+                        backToTopButton.style.opacity = '0';
+                        backToTopButton.style.visibility = 'hidden';
+                    }
+                } else {
+                    // Ensure it stays hidden if CSS hides it
+                    backToTopButton.style.opacity = '0';
+                    backToTopButton.style.visibility = 'hidden';
+                }
+            });
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+
+        // --- NEW JavaScript for Mobile Menu and Search ---
+        const hamburgerToggle = document.getElementById('hamburger-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+        const mobileSearchBar = document.getElementById('mobile-search-bar');
+        const body = document.body;
+
+        if (hamburgerToggle && mobileMenu && menuOverlay && closeMenuBtn) {
+            hamburgerToggle.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+
+            const closeMenu = () => {
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                body.style.overflow = ''; // Restore scrolling
+            };
+
+            closeMenuBtn.addEventListener('click', closeMenu);
+            menuOverlay.addEventListener('click', closeMenu);
+        }
+
+        if (mobileSearchToggle && mobileSearchBar) {
+            mobileSearchToggle.addEventListener('click', () => {
+                mobileSearchBar.classList.toggle('active');
+                if(mobileSearchBar.classList.contains('active')) {
+                    // Optional: focus the input when opened
+                    mobileSearchBar.querySelector('input[type="search"]').focus();
+                }
+            });
+            // Optional: Close search if user clicks outside (more complex)
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
